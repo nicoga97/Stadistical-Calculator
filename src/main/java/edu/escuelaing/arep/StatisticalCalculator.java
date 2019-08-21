@@ -14,7 +14,6 @@ public class StatisticalCalculator {
     public static double calculateMean(LinkedList data) throws Exception {
         double sum = 0;
         for (int i = 0; i < data.size(); i++) {
-            System.out.println(data.get(i));
             sum += data.get(i);
         }
         return sum / data.size();

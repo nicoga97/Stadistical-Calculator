@@ -2,7 +2,7 @@ package edu.escuelaing.arep.Utils;
 
 public class LinkedList {
 
-    Node head;
+    private Node head;
 
     /**
      * Insert a number in a the linked list
@@ -83,6 +83,7 @@ public class LinkedList {
         if (index == 0) {
             answ = head.data;
         } else {
+            node = node.next;
             while (index > 0) {
                 index--;
                 answ = node.data;
@@ -126,18 +127,18 @@ public class LinkedList {
 
     @Override
     public String toString() {
-        String str = "[";
+        StringBuilder str = new StringBuilder("[");
 
         Node node;
         node = head;
 
         while (node != null) {
-            str = str + (node.data + " ");
+            str.append(node.data).append(" ");
 
             node = node.next;
         }
-        str = str + "]";
-        return str;
+        str.append("]");
+        return str.toString();
     }
 
     /**
